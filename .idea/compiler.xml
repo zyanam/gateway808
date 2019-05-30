@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="gateway808_main" target="1.8" />
       <module name="gateway808_test" target="1.8" />
+      <module name="protocol808_main" target="1.8" />
+      <module name="protocol808_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

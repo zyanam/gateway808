@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gateway808.iml" filepath="$PROJECT_DIR$/.idea/modules/gateway808.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gateway808_main.iml" filepath="$PROJECT_DIR$/.idea/modules/gateway808_main.iml" group="gateway808" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gateway808_test.iml" filepath="$PROJECT_DIR$/.idea/modules/gateway808_test.iml" group="gateway808" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protocol808.iml" filepath="$PROJECT_DIR$/.idea/modules/protocol808.iml" group="protocol808" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protocol808/protocol808_main.iml" filepath="$PROJECT_DIR$/.idea/modules/protocol808/protocol808_main.iml" group="protocol808" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protocol808/protocol808_test.iml" filepath="$PROJECT_DIR$/.idea/modules/protocol808/protocol808_test.iml" group="protocol808" />
     </modules>
   </component>
 </project>

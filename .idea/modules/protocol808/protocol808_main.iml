@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":protocol808:main" external.linked.project.path="$MODULE_DIR$/../../../protocol808" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="gateway808" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/../../../protocol808/out/production/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../protocol808/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../protocol808/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../protocol808/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-all:4.1.36.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.projectlombok:lombok:1.18.8" level="project" />
+  </component>
+</module>

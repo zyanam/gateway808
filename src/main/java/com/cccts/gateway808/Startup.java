@@ -1,6 +1,7 @@
 package com.cccts.gateway808;
 
 import com.cccts.gateway808.server.TcpServer;
+import com.cccts.protocol808.Message808;
 
 import java.util.Scanner;
 
@@ -15,6 +16,8 @@ public class Startup {
             }
         }, "TCPServer_thread").start();
 
+        Message808 message808 = new Message808();
+        System.out.println(message808.name);
 
 //        for (; ; ) {
 //            Scanner scanner = new Scanner(System.in);
