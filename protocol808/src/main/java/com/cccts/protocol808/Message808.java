@@ -14,11 +14,17 @@ public class Message808 {
     @Getter
     public ByteBuf originalBuf;
 
+    @Setter
+    @Getter
+    public Msg808Head msg808Head;
 
-    public boolean decode(ByteBuf in) throws Exception{
-        this.originalBuf = in;
+
+    public boolean decode(ByteBuf in) throws Exception {
         //反转义
-        ByteBuf bb = Message808Util.unEscape(in);
-       return true;
+        this.originalBuf = Message808Util.unEscape(in);
+
+        msg808Head = new Msg808Head();
+        msg808Head.decode(this.originalBuf);
+        return true;
     }
 }

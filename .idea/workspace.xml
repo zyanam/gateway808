@@ -2,30 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75a121aa-485e-4fe0-b847-3dbd4f478c02" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_netty_netty_buffer_4_1_36_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_netty_netty_common_4_1_36_Final.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Message808Util.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageDecoder.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageEncoder.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler.java" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/gateway808_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/gateway808_main.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/gateway808_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/gateway808_test.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/protocol808/protocol808_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/protocol808/protocol808_main.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/protocol808/protocol808_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/protocol808/protocol808_test.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Msg808Head.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler2.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler3.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TestInitializer.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TestLogHandler.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cccts/gateway808/Startup.class" afterPath="$PROJECT_DIR$/out/production/classes/com/cccts/gateway808/Startup.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cccts/gateway808/server/TcpServerHandler.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cccts/gateway808/server/TcpServerInitializer.class" afterPath="$PROJECT_DIR$/out/production/classes/com/cccts/gateway808/server/TcpServerInitializer.class" />
-      <change beforePath="$PROJECT_DIR$/protocol808/build.gradle" afterPath="$PROJECT_DIR$/protocol808/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/protocol808/out/production/classes/com/cccts/protocol808/Message808.class" afterPath="$PROJECT_DIR$/protocol808/out/production/classes/com/cccts/protocol808/Message808.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cccts/gateway808/server/TcpServer.class" afterPath="$PROJECT_DIR$/out/production/classes/com/cccts/gateway808/server/TcpServer.class" />
       <change beforePath="$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Message808.java" afterPath="$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Message808.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/Startup.java" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/Startup.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServerHandler.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServerInitializer.java" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServerInitializer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageDecoder.java" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageDecoder.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -105,21 +91,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AbstractChannelHandlerContext.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="368" column="0" lean-forward="false" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TcpServerInitializer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServerInitializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+            <state relative-caret-position="345">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,8 +106,8 @@
       <file leaf-file-name="TcpServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="24" column="58" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="58" />
+            <state relative-caret-position="462">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,8 +116,8 @@
       <file leaf-file-name="MessageDecoder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageDecoder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="421">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -149,70 +125,87 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultChannelPipeline.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/DefaultChannelPipeline.java">
+      <file leaf-file-name="ServerHandler2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="930" column="0" lean-forward="false" selection-start-line="930" selection-start-column="0" selection-end-line="930" selection-end-column="0" />
+            <state relative-caret-position="189">
+              <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
               <folding>
-                <element signature="e#47184#47185#0" expanded="true" />
-                <element signature="e#47232#47233#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractNioByteChannel.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/nio/AbstractNioByteChannel.java">
+      <file leaf-file-name="ServerHandler3.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+            <state relative-caret-position="168">
+              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestInitializer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TestInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestLogHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TestLogHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2058">
+              <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#291#292#0" expanded="true" />
+                <element signature="e#314#315#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoggingHandler.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/handler/logging/LoggingHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="40" column="55" lean-forward="false" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NioEventLoop.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/nio/NioEventLoop.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="438" column="0" lean-forward="false" selection-start-line="438" selection-start-column="0" selection-end-line="438" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerHandler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageEncoder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageEncoder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Message808.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Message808.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Message808.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="546">
+              <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Msg808Head.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Msg808Head.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1093#1100#0" expanded="false" />
+                <element signature="e#1152#1159#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -745,7 +738,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServerHandler.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Message808ServerCodec.java" />
@@ -755,12 +747,18 @@
         <option value="$PROJECT_DIR$/protocol808/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/Message808Decoder.java" />
         <option value="$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Message808Util.java" />
-        <option value="$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Message808.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageLogHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageDecoder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageEncoder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServerInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TestInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TestLogHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageDecoder.java" />
+        <option value="$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Msg808Head.java" />
+        <option value="$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Message808.java" />
       </list>
     </option>
   </component>
@@ -1107,15 +1105,16 @@
       <option name="presentableId" value="Default" />
       <updated>1559200942151</updated>
       <workItem from="1559200946322" duration="8910000" />
-      <workItem from="1559263803978" duration="10841000" />
+      <workItem from="1559263803978" duration="14536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19751000" />
+    <option name="totallyTimeSpent" value="23446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1125,12 +1124,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33019853" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33019853" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1874311" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1874311" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1321,18 +1320,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/handler/logging/LoggingHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5565">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#1491#1594#0" expanded="false" />
-            <element signature="e#2025#2026#0" expanded="false" />
-            <element signature="e#2060#2061#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/Startup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1463,31 +1450,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Message808.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageLogHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1501,10 +1468,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="61" lean-forward="false" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/handler/logging/LoggingHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="40" column="55" lean-forward="false" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TestInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TestLogHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2058">
+          <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServerInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1513,16 +1540,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/TcpServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="58" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="58" />
+        <state relative-caret-position="462">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/ServerHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cccts/gateway808/server/MessageDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+        <state relative-caret-position="421">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Msg808Head.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1093#1100#0" expanded="false" />
+            <element signature="e#1152#1159#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protocol808/src/main/java/com/cccts/protocol808/Message808.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

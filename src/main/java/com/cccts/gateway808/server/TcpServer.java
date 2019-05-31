@@ -23,6 +23,7 @@ public class TcpServer {
                     .option(ChannelOption.SO_BACKLOG, 50000)
                     .childOption(ChannelOption.SO_KEEPALIVE, true)
                     .childHandler(new TcpServerInitializer());
+//                    .childHandler(new TestInitializer());
 
             System.out.println("service start,port=" + this.port);
 

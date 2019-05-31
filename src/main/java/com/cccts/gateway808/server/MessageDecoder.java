@@ -19,10 +19,13 @@ public class MessageDecoder extends ByteToMessageDecoder {
         }
 
         System.out.println("Decode");
-        System.out.println("Decode：" + ByteBufUtil.hexDump(in));
+        System.out.println("Decode,：" + ByteBufUtil.hexDump(in));
+
 
         Message808 msg = new Message808();
         msg.decode(in);
+
+
 
         out.add(msg);
     }
