@@ -16,9 +16,6 @@ public class Startup {
             }
         }, "TCPServer_thread").start();
 
-        Message808 message808 = new Message808();
-        System.out.println(message808.name);
-
 //        for (; ; ) {
 //            Scanner scanner = new Scanner(System.in);
 //            String cmd = scanner.next();
