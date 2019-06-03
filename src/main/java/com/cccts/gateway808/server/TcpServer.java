@@ -1,5 +1,6 @@
 package com.cccts.gateway808.server;
 
+import com.cccts.gateway808.test.TestServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
@@ -22,7 +23,7 @@ public class TcpServer {
                     .channel(NioServerSocketChannel.class)
                     .option(ChannelOption.SO_BACKLOG, 50000)
                     .childOption(ChannelOption.SO_KEEPALIVE, true)
-                    .childHandler(new TcpServerInitializer());
+                    .childHandler(new TcpServerHandlerInitializer());
 //                    .childHandler(new TestInitializer());
 
             System.out.println("service start,port=" + this.port);

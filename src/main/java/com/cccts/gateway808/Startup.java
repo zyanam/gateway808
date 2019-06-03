@@ -1,5 +1,6 @@
 package com.cccts.gateway808;
 
+import com.cccts.gateway808.server.Config;
 import com.cccts.gateway808.server.TcpServer;
 import com.cccts.protocol808.Message808;
 
@@ -9,7 +10,7 @@ public class Startup {
     public static void main(String[] args) throws Exception {
         new Thread(() -> {
             try {
-                TcpServer tcpServer = new TcpServer(8443);
+                TcpServer tcpServer = new TcpServer(Config.TCP_PORT);
                 tcpServer.run();
             } catch (Exception e) {
                 e.printStackTrace();

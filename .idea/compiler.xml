@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="CommonUtil_main" target="1.8" />
+      <module name="CommonUtil_test" target="1.8" />
       <module name="gateway808_main" target="1.8" />
       <module name="gateway808_test" target="1.8" />
       <module name="protocol808_main" target="1.8" />

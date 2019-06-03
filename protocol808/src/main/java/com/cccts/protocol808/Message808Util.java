@@ -5,7 +5,7 @@ import io.netty.buffer.Unpooled;
 
 import java.io.ByteArrayOutputStream;
 
-public class Message808Util {
+public final class Message808Util {
     /**
      * 反转义
      *
@@ -13,7 +13,7 @@ public class Message808Util {
      * @return
      * @throws Exception
      */
-    public static ByteBuf unEscape(ByteBuf in) throws Exception {
+    public static ByteBuf unEscape(ByteBuf in,Integer crc) throws Exception {
         int checkCode = 0;
         ByteArrayOutputStream baos = null;
         try {
@@ -34,6 +34,9 @@ public class Message808Util {
                     checkCode ^= b;
                 }
             }
+
+            crc = checkCode;
+            crc = 100;
 
             return Unpooled.copiedBuffer(baos.toByteArray());
 
