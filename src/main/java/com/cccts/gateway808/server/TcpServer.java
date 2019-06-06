@@ -1,6 +1,5 @@
 package com.cccts.gateway808.server;
 
-import com.cccts.gateway808.test.TestServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;

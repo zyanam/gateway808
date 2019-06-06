@@ -1,13 +1,12 @@
 package com.cccts.gateway808.server;
 
+import com.cccts.gateway808.Config;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.DelimiterBasedFrameDecoder;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.timeout.IdleStateHandler;
 
 
@@ -18,7 +17,7 @@ public class TcpServerHandlerInitializer extends ChannelInitializer<SocketChanne
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
-        pipeline.addLast(new LoggingHandler(LogLevel.INFO));
+//        pipeline.addLast(new LoggingHandler(LogLevel.INFO));
         /**
          * 超时检测
          */

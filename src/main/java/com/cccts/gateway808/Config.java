@@ -1,4 +1,4 @@
-package com.cccts.gateway808.server;
+package com.cccts.gateway808;
 
 public final class Config {
     /**

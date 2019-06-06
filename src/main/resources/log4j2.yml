@@ -1,0 +1,8 @@
+Configuration:
+  status: info
+  name: DataLog
+  appenders:
+    File:
+      name: File
+      fileName:
+
