@@ -2,4 +2,6 @@ rootProject.name = 'gateway808'
 include 'protocol808'
 include 'protocol808'
 include 'CommonUtil'
+include 'commontools'
+include 'commontools'
 

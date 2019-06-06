@@ -15,7 +15,11 @@ public class LogInboundHandler extends SimpleChannelInboundHandler<ByteBuf> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) throws Exception {
         if (msg.isReadable()) {
-            System.out.println(LocalDateTime.now() + "记录日志:" + ByteBufUtil.hexDump(msg));
+            String str = String.format("7E%s7E", ByteBufUtil.hexDump(msg));
+            System.out.println(LocalDateTime.now() + "记录日志:" + str);
+
+
+
             ReferenceCountUtil.retain(msg);
             ctx.fireChannelRead(msg);
         }

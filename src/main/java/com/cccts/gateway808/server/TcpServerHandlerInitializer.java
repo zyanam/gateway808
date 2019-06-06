@@ -6,6 +6,8 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.DelimiterBasedFrameDecoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.timeout.IdleStateHandler;
 
 
@@ -16,13 +18,14 @@ public class TcpServerHandlerInitializer extends ChannelInitializer<SocketChanne
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
+        pipeline.addLast(new LoggingHandler(LogLevel.INFO));
         /**
          * 超时检测
          */
         pipeline.addLast("idleStateHandler", new IdleStateHandler(Config.TERMINAL_OVERTIME, 0, 0));
 
         /**
-         * 粘包，拆包
+         * 粘包，拆包处理
          */
         pipeline.addLast("delimiterBasedFrameDecoder", new DelimiterBasedFrameDecoder(1024, tag1, tag2));
 
@@ -41,10 +44,11 @@ public class TcpServerHandlerInitializer extends ChannelInitializer<SocketChanne
          */
         pipeline.addLast("message808Decoder", new Message808Decoder());
 
+
         /**
-         * 服务端业务处理
+         *  终端态处理
          */
-        pipeline.addLast("serverInboundHandler", new ServerInboundHandler());
+        pipeline.addLast("SessionHandler", new SessionHandler());
 
         /**
          * 回复消息

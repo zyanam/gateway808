@@ -17,20 +17,20 @@ public class Message808 {
 
     @Setter
     @Getter
-    public Msg808Head msg808Head;
+    public Msg808Head head;
 
-    public AbstractMessage808Body msg808Body;
+    public AbstractMessage808Body body;
 
     public void decode(ByteBuf in, boolean isParseBody) throws Exception {
         this.originalBuf = in;
 
-        msg808Head = new Msg808Head();
-        msg808Head.decode(this.originalBuf);
+        head = new Msg808Head();
+        head.decode(this.originalBuf);
 
         if (isParseBody) {
-            switch (msg808Head.msgID) {
+            switch (head.msgID) {
                 case 0x0200: {
-                    msg808Body = new MessageBody0200().decode();
+                    body = new MessageBody0200().decode();
                 }
                 break;
             }

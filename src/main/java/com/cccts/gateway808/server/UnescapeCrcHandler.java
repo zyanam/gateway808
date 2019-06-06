@@ -1,5 +1,6 @@
 package com.cccts.gateway808.server;
 
+import com.cccts.pojos.TwoTuple;
 import com.cccts.protocol808.Message808Util;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
@@ -17,11 +18,10 @@ public class UnescapeCrcHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
         System.out.println(LocalDateTime.now() + "反转义");
 
-        Integer crc = 0;
-        ByteBuf bf = Message808Util.unEscape(msg, crc);
+        TwoTuple<ByteBuf, Integer> re = Message808Util.unEscape(msg);
 
-        System.out.println("crc=" + crc);
+        System.out.println("crc=" + re.getSecond());
 
-        ctx.fireChannelRead(bf);
+        ctx.fireChannelRead(re.getFirst());
     }
 }

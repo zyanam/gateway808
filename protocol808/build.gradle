@@ -14,4 +14,6 @@ dependencies {
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.8'
     // https://mvnrepository.com/artifact/io.netty/netty-buffer
     compile group: 'io.netty', name: 'netty-buffer', version: '4.1.36.Final'
+
+    implementation project(':commontools')
 }

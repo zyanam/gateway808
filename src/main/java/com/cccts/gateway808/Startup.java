@@ -3,11 +3,15 @@ package com.cccts.gateway808;
 import com.cccts.gateway808.server.Config;
 import com.cccts.gateway808.server.TcpServer;
 import com.cccts.protocol808.Message808;
+import io.netty.buffer.ByteBufUtil;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Startup {
     public static void main(String[] args) throws Exception {
+
+
         new Thread(() -> {
             try {
                 TcpServer tcpServer = new TcpServer(Config.TCP_PORT);

@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/CommonUtil" />
+            <option value="$PROJECT_DIR$/commontools" />
             <option value="$PROJECT_DIR$/protocol808" />
           </set>
         </option>

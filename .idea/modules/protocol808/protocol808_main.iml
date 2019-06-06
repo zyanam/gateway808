@@ -11,6 +11,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: org.projectlombok:lombok:1.18.8" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.36.Final" level="project" />
+    <orderEntry type="module" module-name="commontools_main" />
     <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.36.Final" level="project" />
   </component>
 </module>
