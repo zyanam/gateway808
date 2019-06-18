@@ -47,6 +47,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.yaml/snakeyaml
     compile group: 'org.yaml', name: 'snakeyaml', version: '1.24'
 
+
     implementation project(':protocol808')
     implementation project(':commontools')
 }

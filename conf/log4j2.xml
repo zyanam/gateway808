@@ -1,0 +1,54 @@
+<!-- status为不记录log4j本身的日志 -->
+<configuration status="OFF">
+    <properties>
+        <property name="LOG_HOME">d:/logs</property>
+        <property name="DATA_LOG_HOME">datalog</property>
+        <property name="DEBUG_LOG_HOME">debuglog</property>
+    </properties>
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+        </Console>
+        <Console name="DebugConsoleAppender" target="SYSTEM_OUT">
+            <ThresholdFilter level="all" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+        </Console>
+        <RollingRandomAccessFile name="DataLogAppender" fileName="${LOG_HOME}/${DATA_LOG_HOME}/data.log"
+                                 filePattern="${LOG_HOME}/${DATA_LOG_HOME}/${date:yyyy}/${date:yyyy-MM-dd}/data-%d{yyyy-MM-dd}-%i.log.gz">
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!--<PatternLayout pattern="%d{HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>-->
+            <PatternLayout pattern="%d{ABSOLUTE} %msg%xEx%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30000"/>
+        </RollingRandomAccessFile>
+
+        <RollingFile name="DebugLogAppender" fileName="${LOG_HOME}/${DEBUG_LOG_HOME}/debug.log"
+                     filePattern="${LOG_HOME}/${DEBUG_LOG_HOME}/${date:yyyy-MM}/debug-%d{MM-dd-yyyy-HH-mm}-%i.log">
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30000"/>
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <root level="all">
+            <appender-ref ref="Console"/>
+        </root>
+        <Logger name="DataLog" additivity="false">
+            <appender-ref ref="DataLogAppender"/>
+        </Logger>
+        <Logger name="DebugLog" additivity="false">
+            <appender-ref ref="DebugConsoleAppender" />
+            <appender-ref ref="DebugLogAppender"/>
+        </Logger>
+    </loggers>
+</configuration>

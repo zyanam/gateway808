@@ -1,5 +1,6 @@
 package com.cccts.gateway808.server;
 
+import com.cccts.gateway808.ServerLog;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
@@ -25,7 +26,7 @@ public class TcpServer {
                     .childHandler(new TcpServerHandlerInitializer());
 //                    .childHandler(new TestInitializer());
 
-            System.out.println("service start,port=" + this.port);
+            ServerLog.DEBUG_LOG.info("service start; port = " + this.port);
 
             bootstrap.bind(port).sync()
                     .channel().closeFuture().sync();

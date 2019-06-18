@@ -32,11 +32,13 @@ public final class Message808Util {
                     }
                 } else {
                     baos.write(b);
-                    crcCode ^= b;
+                    if(in.readableBytes() > 1){
+                        crcCode ^= b;
+                    }
                 }
             }
 
-            return new TwoTuple<>(Unpooled.copiedBuffer(baos.toByteArray()), crcCode);
+            return new TwoTuple<>(Unpooled.copiedBuffer(baos.toByteArray()), crcCode & 0xFF);
 
         } catch (Exception ex) {
             throw ex;
