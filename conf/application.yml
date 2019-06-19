@@ -3,3 +3,5 @@ server:
   tcp_port: 8444
   #终端在没有读写数据的情况下，超时断开时间(秒)
   terminal_overtime: 130
+  #是否验证校验码(0=不校验，1=校验)
+  check_crc: false

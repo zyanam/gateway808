@@ -1,0 +1,1 @@
+1、解决内存溢出问题，即ByteBuf不释放引发 LEAK: ByteBuf.release() was not called before it's garbage-collected.异常。最后查到在调用ByteBuf.readBytes()的时候，返回值也是ByteBuf，要把这个ByteBuf释放掉。

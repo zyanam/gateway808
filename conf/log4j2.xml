@@ -11,7 +11,7 @@
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
         </Console>
         <Console name="DebugConsoleAppender" target="SYSTEM_OUT">
-            <ThresholdFilter level="all" onMatch="ACCEPT" onMismatch="DENY"/>
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
         </Console>
         <RollingRandomAccessFile name="DataLogAppender" fileName="${LOG_HOME}/${DATA_LOG_HOME}/data.log"

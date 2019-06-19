@@ -3,12 +3,9 @@ package com.cccts.gateway808.server.inboundhandlers;
 import com.cccts.gateway808.ServerLog;
 import com.cccts.protocol808.Message808;
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.ByteBufUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
-import io.netty.util.ReferenceCountUtil;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -24,6 +21,17 @@ public class Message808Decoder extends ByteToMessageDecoder {
             Message808 msg = new Message808();
             msg.decode(in, false);
             out.add(msg);
+
+
+//            System.out.println("in.refCnt="+in.refCnt());
         }
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+//        super.exceptionCaught(ctx, cause);
+//        cause.printStackTrace();
+        ServerLog.DEBUG_LOG.error(cause.getMessage());
+        ctx.close();
     }
 }

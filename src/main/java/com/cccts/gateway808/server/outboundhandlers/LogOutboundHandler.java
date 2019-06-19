@@ -14,3 +14,5 @@ public class LogOutboundHandler extends ChannelOutboundHandlerAdapter {
         System.out.println("LogOutboundHandler.write");
     }
 }
+
+

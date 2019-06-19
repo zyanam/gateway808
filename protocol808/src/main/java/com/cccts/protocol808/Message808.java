@@ -2,6 +2,7 @@ package com.cccts.protocol808;
 
 import com.cccts.protocol808.bodys.MessageBody0200;
 import io.netty.buffer.ByteBuf;
+import io.netty.util.ReferenceCountUtil;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +14,7 @@ public class Message808 {
 
     @Setter
     @Getter
-    public ByteBuf originalBuf;
+    public byte[] originalData;
 
     @Setter
     @Getter
@@ -22,10 +23,11 @@ public class Message808 {
     public AbstractMessage808Body body;
 
     public void decode(ByteBuf in, boolean isParseBody) throws Exception {
-        this.originalBuf = in;
+//        this.originalData = new byte[in.readableBytes()];
+//        in.getBytes(0,this.originalData);
 
         head = new Msg808Head();
-        head.decode(this.originalBuf);
+        head.decode(in);
 
         if (isParseBody) {
             switch (head.msgID) {
@@ -35,7 +37,15 @@ public class Message808 {
                 break;
             }
         } else {
-            in.readBytes(in.readableBytes());
+
+            in.clear();
+//            in.release();
+
+//            ByteBuf bf = in.readBytes(in.readableBytes());
+//            bf.release();
+//            in.release();
+//            System.out.println("in.refCnt="+in.refCnt());
+
         }
     }
 }

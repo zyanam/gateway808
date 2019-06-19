@@ -9,6 +9,6 @@ import io.netty.handler.codec.MessageToByteEncoder;
 public class Message808Encoder extends MessageToByteEncoder<Message808> {
     @Override
     protected void encode(ChannelHandlerContext ctx, Message808 msg, ByteBuf out) throws Exception {
-       out = msg.originalBuf;
+       //out = msg.originalBuf;
     }
 }

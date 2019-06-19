@@ -1,0 +1,68 @@
+package com.cccts.gateway808.server.session;
+
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelId;
+import io.netty.channel.group.ChannelGroup;
+import io.netty.channel.group.DefaultChannelGroup;
+import io.netty.util.concurrent.GlobalEventExecutor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.concurrent.ConcurrentHashMap;
+
+@Data
+public class SessionState {
+    /**
+     * 终端在线表
+     * 存放有效的channel，有效表示至少收到一条有效的808数据，当收到一条有效的808数据，即代表终端上线。
+     */
+    public static ChannelGroup VALID_CHANNEL = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+
+    /**
+     * 保存ChannelId和Session的关系
+     * key = ChannelId
+     */
+    public static ConcurrentHashMap<String, SessionState> CHANNELID_SESSION = new ConcurrentHashMap<>();
+
+    /**
+     * 保存终端和Channel的映射关系
+     * key = SimID
+     */
+    public static ConcurrentHashMap<String, String> SIMID_CHANNEL = new ConcurrentHashMap<>();
+
+    @Getter
+    @Setter
+    private String channelIdStr;
+
+    @Getter
+    @Setter
+    private Channel channel;
+
+    @Getter
+    @Setter
+    private ChannelHandlerContext channelHandlerContext;
+
+    @Getter
+    @Setter
+    private String simID;
+
+    public static void termianlOnline(Channel channel, String simID) {
+        SessionState sessionState = new SessionState();
+        sessionState.channel = channel;
+        sessionState.channelIdStr = channel.id().asLongText();
+        sessionState.simID = simID;
+
+        CHANNELID_SESSION.put(sessionState.channelIdStr, sessionState);
+        SIMID_CHANNEL.put(simID,sessionState.channelIdStr);
+    }
+
+    public static void terminalOffline(Channel channel){
+
+        SessionState sessionState = CHANNELID_SESSION.remove(channel.id().asLongText());
+        if(sessionState != null){
+            SIMID_CHANNEL.remove(sessionState.simID);
+        }
+    }
+}

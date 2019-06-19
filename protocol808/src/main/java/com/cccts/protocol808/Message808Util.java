@@ -6,6 +6,7 @@ import io.netty.buffer.Unpooled;
 
 import java.io.ByteArrayOutputStream;
 
+
 public final class Message808Util {
     /**
      * 反转义
@@ -14,7 +15,7 @@ public final class Message808Util {
      * @return
      * @throws Exception
      */
-    public static TwoTuple<ByteBuf, Integer> unEscape(ByteBuf in) throws Exception {
+    public static Integer unEscape(ByteBuf in) throws Exception {
         Integer crcCode = 0;
         ByteArrayOutputStream baos = null;
         try {
@@ -38,7 +39,12 @@ public final class Message808Util {
                 }
             }
 
-            return new TwoTuple<>(Unpooled.copiedBuffer(baos.toByteArray()), crcCode & 0xFF);
+            in.discardReadBytes();
+            in.writeBytes(baos.toByteArray());
+
+
+//            return new TwoTuple<>(bf, crcCode & 0xFF);
+            return crcCode & 0xFF;
 
         } catch (Exception ex) {
             throw ex;

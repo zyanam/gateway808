@@ -5,6 +5,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.ReferenceCountUtil;
 
@@ -13,25 +14,37 @@ import io.netty.util.ReferenceCountUtil;
  * 入栈日志，接收时的日志
  */
 @ChannelHandler.Sharable
-public class LogInboundHandler extends SimpleChannelInboundHandler<ByteBuf> {
+public class LogInboundHandler extends ChannelInboundHandlerAdapter {
    private int count;
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) throws Exception {
-        if (msg.isReadable()) {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+//        super.exceptionCaught(ctx, cause);
+//        ServerLog.DEBUG_LOG.error(cause.getMessage());
+        cause.printStackTrace();
+        ctx.close();
+    }
 
-            String hexDump = ByteBufUtil.hexDump(msg);
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        if(msg instanceof ByteBuf) {
+            ByteBuf in = (ByteBuf)msg;
+            if (in.isReadable()) {
 
-            ServerLog.DEBUG_LOG.trace(hexDump);
+                String hexDump = ByteBufUtil.hexDump(in);
 
-            ServerLog.DATA_LOG.info(hexDump);
+                ServerLog.DEBUG_LOG.trace(hexDump);
 
-            ReferenceCountUtil.retain(msg);
-            ctx.fireChannelRead(msg);
+                ServerLog.DATA_LOG.info(hexDump);
+
+//                ReferenceCountUtil.retain(in);
+//                in.retain();
+                ctx.fireChannelRead(in);
+            }else {
+                in.release();
+            }
+
+            count++;
         }
-
-        count ++;
-
-        ServerLog.DEBUG_LOG.trace("count=" + count);
     }
 }
