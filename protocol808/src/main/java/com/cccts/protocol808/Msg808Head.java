@@ -1,7 +1,9 @@
 package com.cccts.protocol808;
 
+import com.cccts.helpers.HexStringHelper;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
+import io.netty.buffer.Unpooled;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,9 +15,7 @@ public class Msg808Head {
     @Setter
     public int msgID;
 
-    @Getter
-    @Setter
-    public int bodyAttribute;
+    private int bodyAttribute;
 
     @Getter
     @Setter
@@ -29,7 +29,7 @@ public class Msg808Head {
     @Getter
     public PackageState packageState;
 
-    public Msg808Head decode(ByteBuf in){
+    public Msg808Head decode(ByteBuf in) {
         this.msgID = in.readUnsignedShort();
         this.bodyAttribute = in.readUnsignedShort();
 
@@ -48,6 +48,26 @@ public class Msg808Head {
         return this;
     }
 
+    public ByteBuf encode(ByteBuf bufBody) {
+        ByteBuf buf = Unpooled.directBuffer();
+        buf.writeShort(msgID);
+
+        int bodyLength = bufBody.readableBytes();
+        bodyAttribute = bodyAttribute | bodyLength;
+        if(packageState != null){
+            bodyAttribute = bodyAttribute | 4096;
+        }
+
+        buf.writeShort(bodyAttribute);
+        buf.writeBytes(HexStringHelper.hexStringToBytes(simID));
+        buf.writeShort(serialNO);
+
+        if(this.packageState != null){
+           buf.writeBytes(this.packageState.encode());
+        }
+        return buf;
+    }
+
     @Data
     public class PackageState {
         @Getter
@@ -57,5 +77,12 @@ public class Msg808Head {
         @Getter
         @Setter
         public int current;
+
+        public ByteBuf encode(){
+            ByteBuf buf  = Unpooled.directBuffer();
+            buf.writeShort(total);
+            buf.writeShort(current);
+            return buf;
+        }
     }
 }

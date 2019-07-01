@@ -9,7 +9,7 @@ import java.io.ByteArrayOutputStream;
 
 public final class Message808Util {
     /**
-     * 反转义
+     * 转义还原
      *
      * @param in
      * @return
@@ -33,7 +33,7 @@ public final class Message808Util {
                     }
                 } else {
                     baos.write(b);
-                    if(in.readableBytes() > 1){
+                    if (in.readableBytes() > 1) {
                         crcCode ^= b;
                     }
                 }
@@ -53,5 +53,33 @@ public final class Message808Util {
                 baos.close();
             }
         }
+    }
+
+    /**
+     * 转义、加校验码、加头尾标识符
+     *
+     * @param in
+     */
+    public static void escape(ByteBuf in) {
+        ByteBuf buf = Unpooled.directBuffer();
+        buf.writeByte(0x7E);
+        Integer crc = 0;
+        while (in.isReadable()) {
+            byte b = in.readByte();
+            crc ^= b;
+            if (b == 0x7E) {
+                buf.writeByte(0x7D);
+                buf.writeByte(0x02);
+            } else if (b == 0x7D) {
+                buf.writeByte(0x7D);
+                buf.writeByte(0x01);
+            } else {
+                buf.writeByte(b);
+            }
+        }
+        buf.writeByte(crc);
+        buf.writeByte(0x7E);
+        in.writeBytes(buf);
+        buf.release();
     }
 }

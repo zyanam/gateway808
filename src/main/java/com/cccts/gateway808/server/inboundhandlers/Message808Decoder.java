@@ -1,5 +1,6 @@
 package com.cccts.gateway808.server.inboundhandlers;
 
+import com.cccts.gateway808.Config;
 import com.cccts.gateway808.ServerLog;
 import com.cccts.protocol808.Message808;
 import io.netty.buffer.ByteBuf;
@@ -15,15 +16,16 @@ public class Message808Decoder extends ByteToMessageDecoder {
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
         if (in.isReadable()) {
-//            System.out.println(LocalDateTime.now() + ",解码" + ":" + ByteBufUtil.hexDump(in));
-            ServerLog.DEBUG_LOG.trace("解码");
-
             Message808 msg = new Message808();
-            msg.decode(in, false);
+
+            int result = msg.decode(in, false, Config.CHECK_CRC);
+            if (result == -1) {
+                ServerLog.DATA_LOG.error("校验码验证失败");
+                ServerLog.DEBUG_LOG.error("校验码验证失败");
+                ctx.close();
+            }
+
             out.add(msg);
-
-
-//            System.out.println("in.refCnt="+in.refCnt());
         }
     }
 

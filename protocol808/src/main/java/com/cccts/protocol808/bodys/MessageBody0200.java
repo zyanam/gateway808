@@ -12,7 +12,7 @@ public class MessageBody0200 extends AbstractMessage808Body{
     }
 
     @Override
-    public ByteBuf encode(AbstractMessage808Body msgBody) {
+    public ByteBuf encode() {
         return null;
     }
 }

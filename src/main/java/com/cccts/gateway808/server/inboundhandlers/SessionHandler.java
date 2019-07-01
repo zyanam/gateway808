@@ -18,7 +18,6 @@ public class SessionHandler extends SimpleChannelInboundHandler<Message808> {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-//        super.exceptionCaught(ctx, cause);
 
         ServerLog.DEBUG_LOG.error(cause.getMessage());
         ctx.close();
@@ -26,7 +25,6 @@ public class SessionHandler extends SimpleChannelInboundHandler<Message808> {
 
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
-        //System.out.println("SessionHandler.handlerRemoved");
         SessionState.terminalOffline(ctx.channel());
     }
 }

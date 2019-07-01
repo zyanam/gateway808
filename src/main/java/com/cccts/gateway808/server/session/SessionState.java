@@ -32,6 +32,11 @@ public class SessionState {
      */
     public static ConcurrentHashMap<String, String> SIMID_CHANNEL = new ConcurrentHashMap<>();
 
+    /**
+     * 消息流水号
+     */
+    private Short serialNO = 0;
+
     @Getter
     @Setter
     private String channelIdStr;
@@ -48,21 +53,51 @@ public class SessionState {
     @Setter
     private String simID;
 
-    public static void termianlOnline(Channel channel, String simID) {
-        SessionState sessionState = new SessionState();
-        sessionState.channel = channel;
-        sessionState.channelIdStr = channel.id().asLongText();
-        sessionState.simID = simID;
-
-        CHANNELID_SESSION.put(sessionState.channelIdStr, sessionState);
-        SIMID_CHANNEL.put(simID,sessionState.channelIdStr);
+    /**
+     * 获取消息流水号
+     *
+     * @return
+     */
+    public int getSerialNO() {
+        synchronized (this) {
+            if (this.serialNO >= Short.MAX_VALUE) {
+                this.serialNO = 0;
+            } else {
+                this.serialNO++;
+            }
+            return this.serialNO;
+        }
     }
 
-    public static void terminalOffline(Channel channel){
+    public static void termianlOnline(Channel channel, String simID) {
+        if(!SIMID_CHANNEL.containsKey(simID)) {
+            SessionState sessionState = new SessionState();
+            sessionState.channel = channel;
+            sessionState.channelIdStr = channel.id().asLongText();
+            sessionState.simID = simID;
+
+            CHANNELID_SESSION.put(sessionState.channelIdStr, sessionState);
+            SIMID_CHANNEL.put(simID, sessionState.channelIdStr);
+        }
+    }
+
+    public static void terminalOffline(Channel channel) {
 
         SessionState sessionState = CHANNELID_SESSION.remove(channel.id().asLongText());
-        if(sessionState != null){
+        if (sessionState != null) {
             SIMID_CHANNEL.remove(sessionState.simID);
         }
+    }
+
+    public static SessionState getSessionState(String simID) {
+
+        if (SIMID_CHANNEL.containsKey(simID)) {
+            String channelID = SIMID_CHANNEL.get(simID);
+            if (CHANNELID_SESSION.containsKey(channelID)) {
+                return CHANNELID_SESSION.get(channelID);
+            }
+            return null;
+        }
+        return null;
     }
 }

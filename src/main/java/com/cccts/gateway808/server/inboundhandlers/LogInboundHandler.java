@@ -8,6 +8,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.ReferenceCountUtil;
+import org.apache.logging.log4j.core.jmx.Server;
 
 
 /**
@@ -21,7 +22,8 @@ public class LogInboundHandler extends ChannelInboundHandlerAdapter {
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
 //        super.exceptionCaught(ctx, cause);
 //        ServerLog.DEBUG_LOG.error(cause.getMessage());
-        cause.printStackTrace();
+//        cause.printStackTrace();
+        ServerLog.DEBUG_LOG.info(cause.getMessage());
         ctx.close();
     }
 

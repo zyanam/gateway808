@@ -2,8 +2,6 @@ package com.cccts.gateway808.server;
 
 import com.cccts.gateway808.Config;
 import com.cccts.gateway808.server.inboundhandlers.*;
-import com.cccts.gateway808.server.outboundhandlers.EscapeCrcHandler;
-import com.cccts.gateway808.server.outboundhandlers.LogOutboundHandler;
 import com.cccts.gateway808.server.outboundhandlers.Message808Encoder;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -11,8 +9,6 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.DelimiterBasedFrameDecoder;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.timeout.IdleStateHandler;
 
 
@@ -30,19 +26,9 @@ public class TcpServerHandlerInitializer extends ChannelInitializer<SocketChanne
         ChannelPipeline pipeline = ch.pipeline();
 //        pipeline.addLast(new LoggingHandler(LogLevel.ERROR));
         /**
-         * 808消息(out1)
+         * 编码808消息并记录回复日志
          */
-//        pipeline.addLast("message808Encoder", new Message808Encoder());
-
-        /**
-         * 转义并加校验码(out2)
-         */
-//        pipeline.addLast("escapeCrcHandler", new EscapeCrcHandler());
-
-        /**
-         * 记录发送消息(out3)
-         */
-//        pipeline.addLast("logOutboundHandler", new LogOutboundHandler());
+        pipeline.addLast("message808Encoder", new Message808Encoder());
 
         /**
          * 超时检测(in1)
@@ -58,11 +44,6 @@ public class TcpServerHandlerInitializer extends ChannelInitializer<SocketChanne
          * 记录收到消息(in3)
          */
         pipeline.addLast("logInboundHandler", new LogInboundHandler());
-
-        /**
-         * 反转义加验证校验码(in4)
-         */
-        pipeline.addLast("unescapeCrcHandler", new UnescapeCrcHandler());
 
         /**
          * 解析808消息(in5)

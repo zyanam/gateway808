@@ -20,9 +20,9 @@ public class Startup {
 
         Config.getApplicationConfig();
 
-//        System.setProperty("io.netty.leakDetection.maxRecords", "100");
-//        System.setProperty("io.netty.leakDetection.acquireAndReleaseOnly", "true");
-//        ResourceLeakDetector.setLevel(ResourceLeakDetector.Level.ADVANCED);
+        System.setProperty("io.netty.leakDetection.maxRecords", "100");
+        System.setProperty("io.netty.leakDetection.acquireAndReleaseOnly", "true");
+        ResourceLeakDetector.setLevel(ResourceLeakDetector.Level.ADVANCED);
 
         new Thread(() -> {
             try {
